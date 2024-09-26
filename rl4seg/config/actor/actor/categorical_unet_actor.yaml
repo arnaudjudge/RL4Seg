@@ -1,0 +1,3 @@
+_target_: actors.Actors.UnetActorCategorical
+pretrain_ckpt: null
+ref_ckpt: null

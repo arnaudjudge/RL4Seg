@@ -1,0 +1,8 @@
+defaults:
+  - /reward: rewardunet
+  - /corrector: ae
+
+actor_save_path: null
+critic_save_path: null
+
+predict_save_dir: ./reward_ds/

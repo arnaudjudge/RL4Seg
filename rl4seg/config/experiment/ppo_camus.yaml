@@ -1,0 +1,18 @@
+# @package _global_
+
+defaults:
+  - override /model: ppo
+  - override /datamodule: camus
+  - override /actor/actor@model.actor.actor: categorical_unet_actor
+#  - override /reward@model.reward: pixelwise_accuracy # uncomment here to have 'supervised' RL
+  - override /corrector@model.corrector: ae
+
+datamodule:
+  supervised: False
+
+model:
+  actor:
+    actor:
+      output_shape: [3, 256, 256]
+
+run_name: camus

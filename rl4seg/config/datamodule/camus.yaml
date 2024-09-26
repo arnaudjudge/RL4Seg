@@ -1,0 +1,11 @@
+_target_: datamodules.camus_RL_datamodule.CamusDataModule
+
+data_dir: ${oc.env:DATA_PATH}/camus/RLcamus_affine/
+csv_file: 'camus_split_5.csv'
+
+subset_frac: 1.0
+available_gt: 0.0
+approx_gt_dir: ${logger.save_dir}
+splits_column: split_0
+
+predict_column: pred

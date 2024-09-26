@@ -1,0 +1,4 @@
+_target_: pytorch_lightning.loggers.TensorBoardLogger
+
+save_dir: ${work_dir}/logs
+name: '${get_class_name: ${model._target_}}_${get_class_name: ${model.reward._target_}}_${run_name}'

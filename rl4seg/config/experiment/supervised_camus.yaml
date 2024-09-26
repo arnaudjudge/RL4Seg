@@ -1,0 +1,17 @@
+# @package _global_
+
+defaults:
+  - override /model: supervised
+  - override /datamodule: camus
+
+model:
+  input_shape: [1, 256, 256]
+  output_shape: [3, 256, 256]
+  loss:
+    _target_: torch.nn.CrossEntropyLoss
+    label_smoothing: 0.0
+
+datamodule:
+  supervised: True
+
+run_name: camus

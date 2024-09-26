@@ -1,0 +1,4 @@
+_target_: rewardnet.reward_unet_datamodule.RewardNetDataModule
+
+data_path: ./reward_ds/
+test_fra: 0.1

@@ -1,0 +1,7 @@
+defaults:
+  - default_actor
+  - override actor: binary_unet_actor
+  - override critic: resnet_critic
+  - _self_
+
+_target_: actors.ActorCritic.ActorCritic

@@ -1,0 +1,7 @@
+defaults:
+  - default_actor
+  - override actor: categorical_unet_actor
+  - override critic: unet_critic
+  - _self_
+
+_target_: actors.ActorCritic_Unet.ActorCriticUnetCritic

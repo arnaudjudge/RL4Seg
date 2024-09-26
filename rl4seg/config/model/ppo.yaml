@@ -1,0 +1,10 @@
+defaults:
+  - RLModule
+  - /actor: ac_unet
+
+_target_: PPO.PPO
+
+clip_value: 0.2
+k_steps_per_batch: 5
+entropy_coeff: 0.05
+divergence_coeff: 0.35

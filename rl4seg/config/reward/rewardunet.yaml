@@ -1,0 +1,4 @@
+_target_: Reward.RewardUnet
+
+state_dict_path: ./logs/auto_iteration_entropy/4/rewardnet.ckpt
+temp_factor: 1

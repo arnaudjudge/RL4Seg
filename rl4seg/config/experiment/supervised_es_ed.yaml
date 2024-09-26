@@ -1,0 +1,17 @@
+# @package _global_
+
+defaults:
+  - override /model: supervised
+  - override /datamodule: es_ed
+  - override /corrector@model.corrector: ae
+
+model:
+  input_shape: [1, 256, 256]
+  output_shape: [3, 256, 256]
+  loss:
+    _target_: torch.nn.CrossEntropyLoss
+
+datamodule:
+  supervised: True
+
+run_name: es_ed

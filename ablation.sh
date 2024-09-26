@@ -1,0 +1,8 @@
+python rl4seg/auto_iteration.py run_name=img_only rl_overrides='["+model.predict_do_swap_img=True", "+model.predict_do_model_perturb=False", "+model.predict_do_img_perturb=True", "+model.predict_do_corrections=False"]'
+python rl4seg/auto_iteration.py run_name=corr_only rl_overrides='["+model.predict_do_swap_img=True", "+model.predict_do_model_perturb=False", "+model.predict_do_img_perturb=False", "+model.predict_do_corrections=True"]'
+#python rl4seg/auto_iteration.py run_name=swaps_only rl_overrides='["+model.predict_do_swap_img=True", "+model.predict_do_model_perturb=False", "+model.predict_do_img_perturb=False", "+model.predict_do_corrections=False"]'
+python rl4seg/auto_iteration.py run_name=model_only rl_overrides='["+model.predict_do_swap_img=True", "+model.predict_do_model_perturb=True", "+model.predict_do_img_perturb=False", "+model.predict_do_corrections=False"]'
+
+python rl4seg/auto_iteration.py run_name=img_model rl_overrides='["+model.predict_do_swap_img=True", "+model.predict_do_model_perturb=True", "+model.predict_do_img_perturb=True", "+model.predict_do_corrections=False"]'
+python rl4seg/auto_iteration.py run_name=img_corr rl_overrides='["+model.predict_do_swap_img=True", "+model.predict_do_model_perturb=False", "+model.predict_do_img_perturb=True", "+model.predict_do_corrections=True"]'
+python rl4seg/auto_iteration.py run_name=model_corr rl_overrides='["+model.predict_do_swap_img=True", "+model.predict_do_model_perturb=True", "+model.predict_do_img_perturb=False", "+model.predict_do_corrections=True"]'

@@ -1,0 +1,2 @@
+_target_: actors.Actors.UnetCritic
+pretrain_ckpt: null

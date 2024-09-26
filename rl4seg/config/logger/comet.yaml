@@ -1,0 +1,11 @@
+# https://www.comet.ml
+
+_target_: lightning.pytorch.loggers.comet.CometLogger
+api_key: ${oc.env:COMET_API_KEY} # api key is loaded from environment variable
+save_dir: ${work_dir}/test_logs
+project_name: "RL4Seg"
+rest_api_key: null
+experiment_name: "experiment"
+experiment_key: null # set to resume experiment
+offline: False
+prefix: ""

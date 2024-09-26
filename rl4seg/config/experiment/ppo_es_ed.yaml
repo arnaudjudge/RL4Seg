@@ -1,0 +1,13 @@
+# @package _global_
+
+defaults:
+  - override /model: ppo
+  - override /datamodule: es_ed
+  - override /actor/actor@model.actor.actor: categorical_unet_actor
+  - override /reward@model.reward: pixelwise_accuracy # uncomment here to have 'supervised' RL
+  - override /corrector@model.corrector: ae
+
+datamodule:
+  supervised: True # 'set this to True for supervised RL'
+
+run_name: es_ed

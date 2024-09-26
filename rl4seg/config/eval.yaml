@@ -1,0 +1,23 @@
+work_dir: ${hydra:runtime.cwd}
+run_name: default
+
+defaults:
+  - logger: tensorboard
+  - model: ppo
+  - datamodule: ???
+  - callbacks: default
+  - experiment: ppo_es_ed
+  - _self_
+
+seed: 1
+
+logger:
+  save_dir: ./logs/
+
+ckpt_path: "path_to_actor_module"
+
+trainer:
+  _target_: pytorch_lightning.Trainer
+  log_every_n_steps: 1
+  accelerator: auto
+#  num_sanity_val_steps: 0 # skip sanity check (convenient for debugging directly in train step)

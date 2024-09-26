@@ -1,0 +1,29 @@
+
+num_iter: 4
+run_name: run_1_shrinkperturb
+output_path: ${oc.env:LOG_PATH}/${run_name}/
+
+var_file: ${output_path}/variables.pkl
+
+target: es_ed
+source: camus
+
+#
+# supervised params
+#
+sup_num_epochs: 50
+
+# Increases randomness in initial model
+sup_loss_label_smoothing: 0.0
+
+#
+# RL params
+#
+rl_num_epochs: 5
+rl_num_predict: 2500
+rl_overrides: []
+
+#
+# RewardNet params
+#
+rn_num_epochs: 50

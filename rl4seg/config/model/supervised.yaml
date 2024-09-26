@@ -1,0 +1,11 @@
+defaults:
+  - /corrector: ae
+
+_target_: supervised.supervised_optimizer.SupervisedOptimizer
+
+input_shape: [1, 256, 256]
+output_shape: [1, 256, 256]
+
+ckpt_path: null
+
+predict_save_dir: ./reward_ds/

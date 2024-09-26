@@ -1,0 +1,3 @@
+_target_: utils.correctors.AEMorphoCorrector
+
+ae_ckpt_path: AE_PATH # must have access to comet projet for this to work

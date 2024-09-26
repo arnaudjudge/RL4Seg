@@ -1,0 +1,4 @@
+_target_: rewardnet.reward_unet.RewardOptimizer
+
+save_model_path: ../logs/reward_net.ckpt
+
