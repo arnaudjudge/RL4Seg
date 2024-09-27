@@ -1,7 +1,8 @@
 # RL4Seg
 
 RL4Seg is a reinforcement learning framework for domain adaptation of echocardiography segmentation.
-Key elements of single timestep segmentation RL can be defined as follows:
+
+Key elements of single timestep segmentation RL are defined as follows:
 - State (s): input image
 - Action (a): segmentation for a given image
 - Reward r(s, a): pixelwise error map for a given segmentation and image.
@@ -13,7 +14,7 @@ It's iterative 3 step loop allows the user to fine-tune a segmentation policy (p
 
 The reward network can be used as a reliable uncertainty estimator once training is complete.
 
-While it has been tested on echocardiography images, it can also be used with any other image modality.
+While it has been tested and used on echocardiography images, it can be used with any other image modality.
 
 ## Reference
 Arnaud Judge, Thierry Judge, Nicolas Duchateau, Roman A. Sandler, Joseph Z. Sokol, Olivier Bernard, Pierre-Marc Jodoin. Domain Adaptation of Echocardiography Segmentation Via Reinforcement Learning. International Conference on Medical Image Computing and Computer Assisted Intervention (MICCAI), 2024, Marrakesh, Morocco.
