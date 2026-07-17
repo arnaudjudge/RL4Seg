@@ -71,7 +71,7 @@ def main(cfg):
         df.to_csv(sub_cfg.datamodule.data_dir + sub_cfg.datamodule.csv_file)
     sub_cfg.datamodule.splits_column = experiment_split_column
     sub_cfg.datamodule.gt_column = experiment_gt_column
-    #runner_main(sub_cfg)
+    runner_main(sub_cfg)
 
     for i in range(1, iterations + 1):
         # train reward net
@@ -97,7 +97,7 @@ def main(cfg):
                      f"datamodule.splits_column={experiment_split_column}",
                      f"datamodule.gt_column={experiment_gt_column}",
                      f"+datamodule.train_batch_size={8 * i}",
-                     f"model.actor.actor.pretrain_ckpt={output_path}/{i - 1}/actor_s-p.ckpt",
+                     f"model.actor.actor.pretrain_ckpt={output_path}/{i - 1}/actor.ckpt",
                      f"model.actor.actor.ref_ckpt={output_path}/{0}/actor.ckpt",  # always supervised
                      f"model.reward.state_dict_path={output_path}/{i - 1}/rewardnet.ckpt",
                      # f"model.reward.temp_factor={float(saved_vars['Temperature_factor'])}",
@@ -109,7 +109,7 @@ def main(cfg):
                      f"experiment=ppo_{target_experiment}"
                      ]
         if Path(f"{output_path}/{i - 1}/critic.ckpt").exists():
-            overrides += [f"model.actor.critic.pretrain_ckpt={output_path}/{i - 1}/critic_s-p.ckpt"]
+            overrides += [f"model.actor.critic.pretrain_ckpt={output_path}/{i - 1}/critic.ckpt"]
         sub_cfg = compose(config_name=f"RL_runner.yaml", overrides=overrides)
         print(OmegaConf.to_yaml(sub_cfg))
         runner_main(sub_cfg)
